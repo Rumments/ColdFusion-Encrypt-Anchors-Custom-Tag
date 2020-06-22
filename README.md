@@ -33,7 +33,21 @@ Creates the following link:
 
 All URL variables are converted to one DES encrypted variable "UrlEnc" and uses a different key per session (per user)
 
+Decoding is automatic:
+ The module is included in the onRequestStart portion of the Application.CFC file
+ 
+    function onRequestStart( required string targetPage ) {
+		  include "CustTags\EncAnchorDecode.cfm";
+		  return true;
+    }
 
+The code decrypts the variables and recreates them for use by the application page.
+When turned off, no URL variables get encrypted and development is easy
+When deployed, its turned on, and all URL variables are encrypted using DES
+Other than wrapping internal anchors with the custom tag, and adding the decode module to the application.cfc, nothing else needs to be done to use module. 
+
+For those who are upgrading older applications and do not wish to change every internal URL and its variables this is a boon
+The anchors only need to be wrapped, and the website will operate and format its pages as before, but be secure
 
 
 
