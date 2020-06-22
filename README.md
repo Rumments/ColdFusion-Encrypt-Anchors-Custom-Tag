@@ -38,7 +38,7 @@ Decoding is automatic:
  
     function onRequestStart( required string targetPage ) {
          include "CustTags\EncAnchorDecode.cfm";
-	 return true;
+         return true;
     }
 
 
