@@ -37,8 +37,16 @@ Decoding is automatic:
  The module is included in the onRequestStart portion of the Application.CFC file
  
     function onRequestStart( required string targetPage ) {
-		  include "CustTags\EncAnchorDecode.cfm";
-		  return true;
+         include "CustTags\EncAnchorDecode.cfm";
+	 return true;
+    }
+
+
+Below is how the code is enabled. Any other value or the absence of the variable results in encryption being turned off. 
+
+    function onRequest( string targetPage ) {
+         session.EncAnchorStatus = 'yes';
+         include arguments.targetPage;
     }
 
 The code decrypts the variables and recreates them for use by the application page.
