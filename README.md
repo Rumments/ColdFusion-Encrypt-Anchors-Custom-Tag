@@ -1,4 +1,4 @@
-# Encrypt-Anchors
+# ColdFusion Encrypt-Anchors
 Quickly encrypt and decrypt anchors in ColdFusion applications for increased security and ease of use
 
 The ColdFusion Obfuscation Guide outlines ways of making URL variables secure using HASH.
